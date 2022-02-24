@@ -14,11 +14,16 @@ export const App = (): JSX.Element => {
     console.log(ai)
   }
 
+  setTimeout(() => {
+    console.log((window as any).UA);
+    teste()
+  }, 3000)
+
   useEffect(() => {
     if (!(window as any).UA) return;
     console.log((window as any).UA);
     teste()
-  }, [window]);
+  }, [(window as any)?.UA]);
 
   return (
     <Provider store={store}>
