@@ -21,6 +21,8 @@ export const App = (): JSX.Element => {
   }, 3000)
 
   useEffect(() => {
+    console.log('ihe')
+
     if (!(window as any).UA) return;
     console.log('iha')
     console.log((window as any).UA);
