@@ -9,33 +9,6 @@ import { Layout } from '../Layout/Layout';
 import { Routes } from '../Routes/Routes';
 
 export const App = (): JSX.Element => {
-  const [uaClient, setUaClient] = useState<any>()
-
-  async function teste(){
-    const ai = await (window as any).UA
-    setUaClient(ai)
-    console.log(ai)
-  }
-
-  // setTimeout(() => {
-  //   console.log('ihaaa')
-  //   console.log((window as any).UA);
-  //   teste()
-  // }, 3000)
-
-  useEffect(() => {
-    // console.log('ihe')
-
-    if (!(window as any).UA) return;
-    // console.log('iha')
-    // console.log((window as any).UA);
-    teste()
-  }, [(window as any)?.UA]);
-
-  useEffect(() => {
-    console.log('uaClient', uaClient)
-  }, [uaClient])
-
   return (
     <Provider store={store}>
       <BrowserRouter>
