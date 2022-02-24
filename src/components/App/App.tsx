@@ -10,17 +10,19 @@ import { Routes } from '../Routes/Routes';
 
 export const App = (): JSX.Element => {
   async function teste(){
-    const ai = await (window as any).UA()
+    const ai = await (window as any).UA
     console.log(ai)
   }
 
   setTimeout(() => {
+    console.log('ihaaa')
     console.log((window as any).UA);
     teste()
   }, 3000)
 
   useEffect(() => {
     if (!(window as any).UA) return;
+    console.log('iha')
     console.log((window as any).UA);
     teste()
   }, [(window as any)?.UA]);
